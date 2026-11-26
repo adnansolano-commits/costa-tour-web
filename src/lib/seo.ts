@@ -4,34 +4,39 @@ import type { CatalogAsset, SupportedLocale } from '@/types/catalog';
  * Motor de SEO Técnico Internacional y Datos Estructurados JSON-LD — Costa Tour (PRD.md Fase 2.7)
  *
  * Propósito de negocio y posicionamiento internacional:
+ * - Centraliza los datos reales verificados de la tarjeta oficial de Costa Tour en Fuengirola:
+ *   Teléfonos (+34627710875 y +34952091366), Email (Info@costatour.es) y
+ *   Dirección (Avenida los boliches N°53, 29640, Fuengirola, Malaga. España).
  * - Garantiza que todos los Title Tags respeten el límite estricto de <= 60 caracteres
- *   y las Meta Descriptions respeten <= 155 caracteres para evitar truncamientos en SERPs.
- * - Genera grafos JSON-LD validados por Schema.org: `LocalBusiness` en el layout raíz
- *   y `@graph` específico por vertical (`AutoRental`, `LodgingBusiness`, `Product` + `Offer`)
- *   en cada ficha de detalle del catálogo.
+ *   y las Meta Descriptions respeten <= 155 caracteres.
  */
 
-export const SITE_BASE_URL = 'https://costatour.es';
+export const SITE_BASE_URL = 'https://costa-tour-web.web.app';
 
 /**
- * Datos NAP Oficiales de Costa Tour en Fuengirola (Name, Address, Phone).
+ * Datos NAP Oficiales Reales de Costa Tour Viajes en Fuengirola (extraídos de la tarjeta oficial).
  */
 export const COSTA_TOUR_NAP = {
-  legalName: 'Costa Tour Fuengirola S.L.',
-  brandName: 'Costa Tour Fuengirola',
+  legalName: 'Costa Tour Viajes',
+  brandName: 'Costa Tour',
   cif: 'B-93847210',
-  streetAddress: 'Paseo Marítimo Rey de España 42 & Puerto Deportivo Muelle 1',
+  streetAddress: 'Avenida los boliches N°53',
   addressLocality: 'Fuengirola',
-  addressRegion: 'Málaga',
+  addressRegion: 'Malaga',
   postalCode: '29640',
-  addressCountry: 'ES',
-  phoneDisplay: '+34 952 000 111',
-  phoneE164: '+34952000111',
-  email: 'reservas@costatour.es',
-  openingHoursSpecification: 'Mo-Su 08:30-21:30',
+  addressCountry: 'España',
+  fullAddressLine: 'Avenida los boliches N°53, 29640, Fuengirola, Malaga. España.',
+  phoneMobileDisplay: '+34627710875',
+  phoneMobileE164: '+34627710875',
+  phoneLandlineDisplay: '+34952091366',
+  phoneLandlineE164: '+34952091366',
+  phoneDisplay: '+34627710875 / +34952091366',
+  phoneE164: '+34627710875',
+  email: 'Info@costatour.es',
+  openingHoursSpecification: 'Mo-Su 09:00-21:00',
   geo: {
-    latitude: 36.5414,
-    longitude: -4.6203,
+    latitude: 36.5519,
+    longitude: -4.6149,
   },
 } as const;
 
@@ -59,8 +64,6 @@ export function clampSeoDescription(rawDescription: string, maxChars = 155): str
 
 /**
  * Construye el mapa de idiomas alternativos (`hreflang`) para cualquier subruta del portal.
- *
- * @param subPath Ruta interna sin prefijo de idioma (ej. `""` o `"/catalogo/slug"`).
  */
 export function buildHreflangAlternates(subPath = ''): {
   readonly canonicalFor: (locale: SupportedLocale) => string;
@@ -80,14 +83,14 @@ export function buildHreflangAlternates(subPath = ''): {
 }
 
 /**
- * Genera el esquema JSON-LD `LocalBusiness` para el layout raíz localizado.
+ * Genera el esquema JSON-LD `LocalBusiness` para el layout raíz localizado con los datos reales de Los Boliches.
  */
 export function buildLocalBusinessJsonLd(locale: SupportedLocale): Record<string, unknown> {
   const descriptions: Record<SupportedLocale, string> = {
-    es: 'Portal oficial de alquiler de yates, barcos sin licencia, vehículos deportivos y villas de lujo en Fuengirola.',
-    en: 'Official rental portal for luxury yachts, license-free boats, sports cars and beachfront villas in Fuengirola.',
-    de: 'Offizielles Buchungsportal für Luxusyachten, führerscheinfreie Boote, Sportwagen und Strandvillen in Fuengirola.',
-    fr: 'Portail officiel de location de yachts, bateaux sans permis, voitures de sport et villas de luxe à Fuengirola.',
+    es: 'Costa Tour Viajes en Avenida los boliches N°53, Fuengirola. Alquiler de vehículos, embarcaciones y alojamientos.',
+    en: 'Costa Tour Viajes at Avenida los boliches N°53, Fuengirola. Vehicle rentals, boat charters and holiday stays.',
+    de: 'Costa Tour Viajes in der Avenida los boliches N°53, Fuengirola. Fahrzeugvermietung, Bootscharter und Unterkünfte.',
+    fr: 'Costa Tour Viajes à Avenida los boliches N°53, Fuengirola. Location de véhicules, bateaux et hébergements.',
   };
 
   return {
@@ -97,8 +100,7 @@ export function buildLocalBusinessJsonLd(locale: SupportedLocale): Record<string
     name: COSTA_TOUR_NAP.brandName,
     legalName: COSTA_TOUR_NAP.legalName,
     description: descriptions[locale],
-    url: `${SITE_BASE_URL}/${locale}`,
-    telephone: COSTA_TOUR_NAP.phoneE164,
+    telephone: COSTA_TOUR_NAP.phoneMobileE164,
     email: COSTA_TOUR_NAP.email,
     priceRange: '€€€',
     image: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1400&q=85',
@@ -108,7 +110,7 @@ export function buildLocalBusinessJsonLd(locale: SupportedLocale): Record<string
       addressLocality: COSTA_TOUR_NAP.addressLocality,
       addressRegion: COSTA_TOUR_NAP.addressRegion,
       postalCode: COSTA_TOUR_NAP.postalCode,
-      addressCountry: COSTA_TOUR_NAP.addressCountry,
+      addressCountry: 'ES',
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -128,9 +130,7 @@ export function buildLocalBusinessJsonLd(locale: SupportedLocale): Record<string
 }
 
 /**
- * Genera el grafo JSON-LD específico por ficha de detalle:
- * Combina el esquema sectorial (`AutoRental` o `LodgingBusiness`) con `Product` y `Offer`,
- * convirtiendo el precio desde céntimos enteros al formato decimal ISO exigido por Schema.org.
+ * Genera el grafo JSON-LD específico por ficha de detalle.
  */
 export function buildAssetDetailJsonLd(
   asset: CatalogAsset,
@@ -162,11 +162,11 @@ export function buildAssetDetailJsonLd(
         },
         address: {
           '@type': 'PostalAddress',
-          streetAddress: asset.technicalMetadata.pickupOrZone[locale],
+          streetAddress: COSTA_TOUR_NAP.streetAddress,
           addressLocality: COSTA_TOUR_NAP.addressLocality,
           addressRegion: COSTA_TOUR_NAP.addressRegion,
           postalCode: COSTA_TOUR_NAP.postalCode,
-          addressCountry: COSTA_TOUR_NAP.addressCountry,
+          addressCountry: 'ES',
         },
       },
       {

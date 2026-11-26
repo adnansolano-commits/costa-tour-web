@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Anchor, Building2, CarFront, Compass, Globe, Menu, Sparkles, X } from 'lucide-react';
+import { Anchor, Building2, CarFront, Globe, Menu, Sparkles, X } from 'lucide-react';
+import { CostaTourLogo } from '@/components/CostaTourLogo';
 import { LOCALE_LABELS, SUPPORTED_LOCALES } from '@/i18n/config';
 import type { UIDictionary } from '@/i18n/dictionaries';
 import type { AssetVertical, SupportedLocale } from '@/types/catalog';
@@ -26,11 +27,9 @@ export const VERTICAL_SELECT_EVENT = 'costatour:select-vertical';
  * Navegación Global Sticky & Mobile Drawer — Costa Tour (PRD.md Fase 2.1)
  *
  * Propósito de negocio y UX:
- * - Inicia transparente sobre el vídeo del Hero para maximizar la inmersión visual y muta a
- *   cristal esmerilado (`glass-mediterranean`) al superar 24px de scroll.
- * - Facilita el acceso en 1 clic a las 3 verticales (Vehículos, Pisos y Casas, Flota Náutica),
- *   el cambio instantáneo de idioma (`ES | EN | DE | FR`) y un drawer móvil ergonómico
- *   diseñado para manejarse con una sola mano.
+ * - Integra el logotipo recreado de Costa Tour Viajes (Avión + Ferry CT + lema "VIAJA. DESCUBRE. VIVE.").
+ * - Inicia transparente sobre el vídeo del Hero y muta a cristal esmerilado (`glass-mediterranean`)
+ *   al superar 24px de scroll.
  */
 export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
   const pathname = usePathname();
@@ -47,7 +46,6 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Bloquea el scroll del documento cuando el drawer móvil está abierto y permite cerrar con Escape
   useEffect(() => {
     if (!isMobileMenuOpen) {
       document.body.style.overflow = '';
@@ -68,10 +66,6 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
     };
   }, [isMobileMenuOpen]);
 
-  /**
-   * Construye la ruta localizada equivalente al cambiar de idioma (`es`, `en`, `de`, `fr`),
-   * preservando subrutas internas para no perder el contexto del usuario.
-   */
   const buildLocalizedPath = (targetLocale: SupportedLocale): string => {
     if (!pathname) {
       return `/${targetLocale}`;
@@ -89,9 +83,6 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
     return `/${targetLocale}/${segments.join('/')}`;
   };
 
-  /**
-   * Activa una vertical específica en el buscador/catálogo y desplaza suavemente la vista.
-   */
   const handleSelectVertical = (vertical: AssetVertical) => {
     setIsMobileMenuOpen(false);
     window.dispatchEvent(
@@ -132,27 +123,20 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-out ${
           isScrolled
-            ? 'glass-mediterranean py-3 shadow-2xl shadow-[#0A1628]/50'
-            : 'border-b border-transparent bg-gradient-to-b from-[#0A1628]/85 to-transparent py-5'
+            ? 'glass-mediterranean py-2.5 shadow-2xl shadow-[#0A1628]/50'
+            : 'border-b border-transparent bg-gradient-to-b from-[#0A1628]/90 to-transparent py-4'
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Logotipo e Identidad Mediterránea */}
+          {/* Logotipo Recreado Oficial Costa Tour Viajes */}
           <Link
             href={`/${locale}`}
-            className="group flex items-center gap-3 focus:outline-none"
+            className="group flex items-center focus:outline-none"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F59E0B] text-[#0A1628] shadow-lg shadow-[#F59E0B]/25 transition-transform duration-300 ease-out group-hover:scale-105">
-              <Compass className="h-6 w-6 stroke-[2.2]" aria-hidden="true" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display text-xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-2xl">
-                COSTA <span className="text-[#F59E0B]">TOUR</span>
-              </span>
-              <span className="text-[11px] font-medium uppercase tracking-widest text-[#94A3B8]">
-                {dict.brandTagline}
-              </span>
-            </div>
+            <CostaTourLogo
+              variant="navbar"
+              className="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+            />
           </Link>
 
           {/* Enlaces Desktop a las 3 Verticales */}
@@ -226,7 +210,7 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
         </div>
       </header>
 
-      {/* Drawer Lateral Mobile-First (DESIGN.md Sección 5) */}
+      {/* Drawer Lateral Mobile-First */}
       {isMobileMenuOpen && (
         <div
           id="mobile-navigation-drawer"
@@ -235,29 +219,17 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
           aria-label="Mobile Navigation"
           className="fixed inset-0 z-50 flex justify-end lg:hidden"
         >
-          {/* Backdrop oscuro con desenfoque */}
           <div
             onClick={() => setIsMobileMenuOpen(false)}
             aria-hidden="true"
             className="fixed inset-0 bg-[#0A1628]/80 backdrop-blur-sm transition-opacity"
           />
 
-          {/* Panel del Drawer */}
           <div className="relative z-10 flex h-full w-full max-w-sm flex-col justify-between border-l border-white/15 bg-[#0A1628] p-6 text-[#F8FAFC] shadow-2xl">
             <div>
-              {/* Cabecera del Drawer */}
+              {/* Cabecera del Drawer con el Logo Oficial */}
               <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F59E0B] text-[#0A1628]">
-                    <Compass className="h-5 w-5 stroke-[2.2]" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <p className="font-display text-lg font-extrabold text-[#F8FAFC]">
-                      COSTA <span className="text-[#F59E0B]">TOUR</span>
-                    </p>
-                    <p className="text-xs text-[#94A3B8]">{dict.mobileDrawerSubtitle}</p>
-                  </div>
-                </div>
+                <CostaTourLogo variant="navbar" />
 
                 <button
                   type="button"
@@ -269,7 +241,7 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
                 </button>
               </div>
 
-              {/* Enlaces Táctiles a las 3 Verticales (Altura mínima 52px para pulgar) */}
+              {/* Enlaces Táctiles a las 3 Verticales */}
               <nav className="mt-6 flex flex-col gap-3">
                 {navItems.map((item) => {
                   const Icon = item.icon;

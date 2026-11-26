@@ -15,14 +15,14 @@ export interface WhatsAppFloatingButtonProps {
  * Botón Flotante Persistente de WhatsApp — Costa Tour (DESIGN.md Sección 5 / PRD.md Fase 2.1)
  *
  * Propósito de negocio y conversión móvil:
- * - Ofrece atención inmediata vía WhatsApp al turista que navega con una mano en Fuengirola.
+ * - Conecta directamente con el número móvil oficial de la tarjeta de Costa Tour (+34627710875).
  * - En pantallas móviles se eleva a `bottom-24` (`lg:bottom-6`) para garantizar que nunca
  *   tape la barra inferior fija (`sticky bottom bar`) de reserva en páginas de detalle.
  */
 export function WhatsAppFloatingButton({
   label,
   prefilledText,
-  phoneNumber = '34952000111',
+  phoneNumber = '34627710875',
 }: WhatsAppFloatingButtonProps) {
   const encodedMessage = encodeURIComponent(prefilledText);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

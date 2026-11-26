@@ -329,9 +329,9 @@ export const DICTIONARIES: Record<SupportedLocale, UIDictionary> = {
         'Gestionamos nuestra propia flota y propiedades desde el Puerto Deportivo y el Paseo Marítimo de Fuengirola, con atención personalizada en 4 idiomas.',
       pillars: [
         {
-          title: 'Presencia Física en el Puerto de Fuengirola',
+          title: 'Sede Oficial en Avenida Los Boliches Nº53',
           description:
-            'Amarre propio en el Muelle 1 y showroom en Paseo Marítimo Rey de España 42. Entrega en mano o en el Aeropuerto de Málaga (AGP).',
+            'Oficina central en Avenida los boliches N°53 (29640 Fuengirola) y operativa en el Puerto Deportivo. Entrega en mano o en Aeropuerto de Málaga (AGP).',
           metric: '100% Flota Verificada',
         },
         {
@@ -554,9 +554,9 @@ export const DICTIONARIES: Record<SupportedLocale, UIDictionary> = {
         'We own and operate our fleet and properties right from Fuengirola Marina and Paseo Marítimo, providing native support in 4 languages.',
       pillars: [
         {
-          title: 'Physical Hub at Fuengirola Marina',
+          title: 'Official Office at Avenida Los Boliches Nº53',
           description:
-            'Private berth at Pier 1 and showroom at Paseo Marítimo Rey de España 42. Direct handover or VIP delivery at Málaga Airport (AGP).',
+            'Headquarters at Avenida los boliches N°53 (29640 Fuengirola) and marina operations. Direct handover or VIP delivery at Málaga Airport (AGP).',
           metric: '100% Verified Assets',
         },
         {
@@ -779,9 +779,9 @@ export const DICTIONARIES: Record<SupportedLocale, UIDictionary> = {
         'Wir betreiben unsere eigene Flotte und Immobilien direkt vom Yachthafen und Paseo Marítimo in Fuengirola aus – mit persönlichem Service in 4 Sprachen.',
       pillars: [
         {
-          title: 'Präsenz vor Ort im Hafen von Fuengirola',
+          title: 'Offizieller Sitz in der Avenida Los Boliches Nº53',
           description:
-            'Eigener Liegeplatz an Pier 1 und Showroom am Paseo Marítimo Rey de España 42. Übergabe vor Ort oder VIP-Service am Flughafen Málaga (AGP).',
+            'Zentrale in der Avenida los boliches N°53 (29640 Fuengirola) sowie am Yachthafen. Übergabe vor Ort oder VIP-Service am Flughafen Málaga (AGP).',
           metric: '100% Geprüfte Flotte',
         },
         {
@@ -1004,9 +1004,9 @@ export const DICTIONARIES: Record<SupportedLocale, UIDictionary> = {
         'Nous exploitons notre propre flotte et nos résidences depuis la Marina et le Paseo Marítimo de Fuengirola, avec une conciergerie native en 4 langues.',
       pillars: [
         {
-          title: 'Présence Physique à la Marina de Fuengirola',
+          title: 'Agence Officielle à Avenida Los Boliches Nº53',
           description:
-            'Amarrage privé au Quai 1 et showroom au Paseo Marítimo Rey de España 42. Remise en main propre ou livraison VIP à l’Aéroport de Málaga (AGP).',
+            'Siège central à Avenida los boliches N°53 (29640 Fuengirola) et marina. Remise en main propre ou livraison VIP à l’Aéroport de Málaga (AGP).',
           metric: '100% Flotte Vérifiée',
         },
         {
