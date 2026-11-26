@@ -12,7 +12,7 @@ Plataforma de reservas de alto rendimiento para **Costa Tour** (Fuengirola, Mál
 ### ✅ FASE 1: Inicialización y Puente Stitch MCP (Completada)
 - **Google Stitch MCP:** Proyecto conectado (`projects/12466182647634513568`) y sistema de diseño generado a partir de `DESIGN.md` (`assetId: 4be7469159e548ad8a098b670661afbf`).
 - **Tokens Visuales ("Mediterranean Luxury & High-Velocity"):** Paleta estricta (`#0A1628`, `#112240`, `#F8FAFC`, `#F59E0B`, `#0EA5E9`) y tipografías `Outfit` + `Inter` (`tabular-nums`) sincronizadas en `src/app/globals.css`.
-- **Arquitectura Multi-idioma (`i18n`):** Enrutamiento localizado (`/es`, `/en`, `/de`, `/fr`) con detección automática de navegador en `src/middleware.ts`, utilidades deterministas de moneda en `src/i18n/config.ts` y diccionarios tipados en `src/i18n/dictionaries.ts`.
+- **Arquitectura Multi-idioma (`i18n` + RTL):** Enrutamiento localizado en 5 idiomas (`/es`, `/en`, `/de`, `/fr`, `/ar` con soporte completo Right-to-Left, tipografía `Cairo` y diccionario `src/messages/ar.json`), utilidades deterministas de moneda en `src/i18n/config.ts` y diccionarios tipados en `src/i18n/dictionaries.ts`.
 - **Integridad Financiera y Catálogo Mock:** Contratos estrictos sin `any` en `src/types/catalog.ts` y catálogo realista de las 3 verticales en `src/data/mockCatalog.ts` con todos los importes y fianzas expresados en **céntimos enteros de Euro**.
 
 ### ✅ FASE 2: Construcción del Frontend, SEO Técnico y RGPD (Completada)
