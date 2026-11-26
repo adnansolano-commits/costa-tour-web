@@ -77,6 +77,7 @@ export function buildHreflangAlternates(subPath = ''): {
       'en-GB': `${SITE_BASE_URL}/en${normalizedSubPath}`,
       'de-DE': `${SITE_BASE_URL}/de${normalizedSubPath}`,
       'fr-FR': `${SITE_BASE_URL}/fr${normalizedSubPath}`,
+      'ar-AE': `${SITE_BASE_URL}/ar${normalizedSubPath}`,
       'x-default': `${SITE_BASE_URL}/es${normalizedSubPath}`,
     },
   };
@@ -91,6 +92,7 @@ export function buildLocalBusinessJsonLd(locale: SupportedLocale): Record<string
     en: 'Costa Tour Viajes at Avenida los boliches N°53, Fuengirola. Vehicle rentals, boat charters and holiday stays.',
     de: 'Costa Tour Viajes in der Avenida los boliches N°53, Fuengirola. Fahrzeugvermietung, Bootscharter und Unterkünfte.',
     fr: 'Costa Tour Viajes à Avenida los boliches N°53, Fuengirola. Location de véhicules, bateaux et hébergements.',
+    ar: 'كوستا تور للسفر في فوينخيرولا (Avenida los boliches N°53). تأجير يخوت وقوارب وسيارات فاخرة وشقق وفيلات.',
   };
 
   return {
@@ -125,7 +127,7 @@ export function buildLocalBusinessJsonLd(locale: SupportedLocale): Record<string
       bestRating: '5',
       worstRating: '1',
     },
-    availableLanguage: ['Spanish', 'English', 'German', 'French'],
+    availableLanguage: ['Spanish', 'English', 'German', 'French', 'Arabic'],
   };
 }
 

@@ -98,6 +98,20 @@ const LEGAL_DOCUMENTS: Record<
         },
       ],
     },
+    ar: {
+      title: 'الإشعار القانوني والسجل التجاري',
+      summary: 'معلومات قانونية إلزامية وفقاً للقانون الإسباني 34/2002 (LSSI-CE).',
+      sections: [
+        {
+          heading: '1. ملكية البوابة الإلكترونية',
+          body: `المالك: ${COSTA_TOUR_NAP.legalName} (الرقم الضريبي ${COSTA_TOUR_NAP.cif})، العنوان: ${COSTA_TOUR_NAP.streetAddress}, ${COSTA_TOUR_NAP.postalCode} ${COSTA_TOUR_NAP.addressLocality} (${COSTA_TOUR_NAP.addressRegion}, إسبانيا). البريد الإلكتروني: ${COSTA_TOUR_NAP.email} · الهاتف: ${COSTA_TOUR_NAP.phoneDisplay}.`,
+        },
+        {
+          heading: '2. نطاق النشاط',
+          body: 'تدير كوستا تور تأجير القوارب واليخوت الترفيهية، المركبات البرية، والشقق والفيلات السياحية المرخصة في فوينخيرولا.',
+        },
+      ],
+    },
   },
   privacidad: {
     es: {
@@ -156,6 +170,20 @@ const LEGAL_DOCUMENTS: Record<
         },
       ],
     },
+    ar: {
+      title: 'سياسة الخصوصية وحماية البيانات (RGPD)',
+      summary: 'معالجة البيانات الشخصية وفقاً للائحة الاتحاد الأوروبي 2016/679 (GDPR).',
+      sections: [
+        {
+          heading: '1. المسؤول عن البيانات والغرض منها',
+          body: `تعالج ${COSTA_TOUR_NAP.legalName} بيانات الحجز حصرياً لتنفيذ عقد الإيجار، وإدارة التفويض المسبق للتأمين عبر Stripe 3D Secure والامتثال لقوانين تسجيل المسافرين في إسبانيا.`,
+        },
+        {
+          heading: '2. سياسة عدم تخزين البطاقات البنكية',
+          body: 'لا تقوم كوستا تور أبداً بتخزين أرقام بطاقات الائتمان أو رموز CVV محلياً. تتم جميع المعاملات عبر رموز مشفرة مباشرة لدى Stripe (معيار PCI-DSS المستوى 1).',
+        },
+      ],
+    },
   },
   cookies: {
     es: {
@@ -206,11 +234,25 @@ const LEGAL_DOCUMENTS: Record<
       sections: [
         {
           heading: '1. Cookies Techniques Strictement Nécessaires',
-          body: 'Mémorisent votre langue active (/es, /en, /de, /fr), votre choix RGPD (costatour_cookie_consent_v1) et sécurisent le processus de réservation.',
+          body: 'Mémorisent votre langue active (/es, /en, /de, /fr, /ar), votre choix RGPD (costatour_cookie_consent_v1) et sécurisent le processus de réservation.',
         },
         {
           heading: '2. Cookies Optionnels & Révocation',
           body: 'Les cookies non essentiels sont désactivés par défaut et modifiables à tout moment depuis le pied de page.',
+        },
+      ],
+    },
+    ar: {
+      title: 'سياسة ملفات تعريف الارتباط (Cookies)',
+      summary: 'تفاصيل ملفات تعريف الارتباط التقنية والتحليلية في كوستا تور.',
+      sections: [
+        {
+          heading: '1. ملفات تعريف الارتباط التقنية الضرورية',
+          body: 'تُستخدم لحفظ مسار اللغة النشط (/es, /en, /de, /fr, /ar) وحالة موافقتك القانونية (costatour_cookie_consent_v1) وحماية عملية الدفع والحجز.',
+        },
+        {
+          heading: '2. ملفات تعريف الارتباط الاختيارية وإلغاء الموافقة',
+          body: 'تظل ملفات التحليل والتفضيلات معطلة افتراضياً ولا تعمل إلا بموافقتك الصريحة، ويمكنك تعديل خياراتك في أي وقت من أسفل الصفحة.',
         },
       ],
     },
@@ -269,6 +311,20 @@ const LEGAL_DOCUMENTS: Record<
         {
           heading: '2. Pré-Autorisation et Libération Automatique de la Caution',
           body: 'La caution est bloquée séparément par empreinte bancaire 3D Secure (SCA) et libérée automatiquement après restitution sans dommage.',
+        },
+      ],
+    },
+    ar: {
+      title: 'الشروط العامة للإيجار وسياسة التأمين المسترد',
+      summary: 'قواعد شفافة للحجز والإلغاء المرن حتى 48 ساعة والتفويض المسبق للتأمين.',
+      sections: [
+        {
+          heading: '1. تسعير شفاف وشامل',
+          body: 'جميع الأسعار المعروضة تشمل ضريبة القيمة المضافة والتأمين الإلزامي والمزايا المحددة في بطاقة كل عرض (الوقود في القوارب بدون رخصة، التنظيف النهائي في العقارات أو الكيلومترات اليومية في المركبات).',
+        },
+        {
+          heading: '2. التفويض المسبق والإفراج التلقائي عن التأمين المسترد',
+          body: 'لا يتم خصم التأمين المسترد كرسوم، بل يتم حجزه مؤقتاً بتفويض بنكي 3D Secure (SCA) ويُفرج عنه تلقائياً فور فحص المركبة أو القارب أو العقار عند التسليم دون أضرار.',
         },
       ],
     },

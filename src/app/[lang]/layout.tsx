@@ -4,7 +4,13 @@ import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { FooterLocalSeo } from '@/components/FooterLocalSeo';
 import { NavbarGlobal } from '@/components/NavbarGlobal';
 import { WhatsAppFloatingButton } from '@/components/WhatsAppFloatingButton';
-import { DEFAULT_LOCALE, isValidLocale, LOCALE_LABELS, SUPPORTED_LOCALES } from '@/i18n/config';
+import {
+  DEFAULT_LOCALE,
+  getLocaleDirection,
+  isValidLocale,
+  LOCALE_LABELS,
+  SUPPORTED_LOCALES,
+} from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import {
   buildHreflangAlternates,
@@ -79,9 +85,15 @@ export default async function LocalizedLayout({
   const locale: SupportedLocale = isValidLocale(lang) ? lang : DEFAULT_LOCALE;
   const dict = getDictionary(locale);
   const localBusinessJsonLd = buildLocalBusinessJsonLd(locale);
+  const direction = getLocaleDirection(locale);
 
   return (
-    <div data-locale={locale} className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#0F172A]">
+    <div
+      dir={direction}
+      lang={locale}
+      data-locale={locale}
+      className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#0F172A]"
+    >
       {/* Datos Estructurados JSON-LD LocalBusiness en el Layout Raíz (PRD.md Fase 2.7) */}
       <script
         type="application/ld+json"

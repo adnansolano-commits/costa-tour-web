@@ -8,8 +8,8 @@
  *   enteros en céntimos de euro para eliminar errores de redondeo IEEE 754 en coma flotante.
  */
 
-/** Idiomas soportados oficialmente por la arquitectura i18n de Costa Tour */
-export type SupportedLocale = 'es' | 'en' | 'de' | 'fr';
+/** Idiomas soportados oficialmente por la arquitectura i18n de Costa Tour (incluye Árabe RTL) */
+export type SupportedLocale = 'es' | 'en' | 'de' | 'fr' | 'ar';
 
 /** Las 3 verticales operativas de Costa Tour en Fuengirola */
 export type AssetVertical = 'VEHICLE' | 'PROPERTY' | 'BOAT';
