@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { FooterLocalSeo } from '@/components/FooterLocalSeo';
+import { HtmlDirSync } from '@/components/HtmlDirSync';
 import { NavbarGlobal } from '@/components/NavbarGlobal';
 import { WhatsAppFloatingButton } from '@/components/WhatsAppFloatingButton';
 import {
@@ -94,6 +95,9 @@ export default async function LocalizedLayout({
       data-locale={locale}
       className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#0F172A]"
     >
+      {/* Sincronización dinámica de lang y dir="rtl" | "ltr" en la etiqueta <html> raíz */}
+      <HtmlDirSync locale={locale} />
+
       {/* Datos Estructurados JSON-LD LocalBusiness en el Layout Raíz (PRD.md Fase 2.7) */}
       <script
         type="application/ld+json"

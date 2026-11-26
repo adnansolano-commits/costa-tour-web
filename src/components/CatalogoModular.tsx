@@ -263,7 +263,7 @@ export function CatalogoModular({
                   className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-[#F8FAFC] backdrop-blur-md transition-colors hover:bg-[#F59E0B] hover:text-[#0A1628]"
                 >
                   <span>{dict.bentoExploreVertical}</span>
-                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  <ArrowUpRight className="h-3.5 w-3.5 rtl:-scale-x-100" aria-hidden="true" />
                 </button>
               </div>
 
@@ -293,7 +293,7 @@ export function CatalogoModular({
                     <span className="text-2xl font-extrabold text-[#F59E0B]">
                       {formatCentsToEUR(asset.priceCents, locale)}
                     </span>
-                    <span className="ml-1 text-xs text-[#94A3B8]">
+                    <span className="ms-1 text-xs text-[#94A3B8]">
                       {formatBillingUnitLabel(asset.billingUnit, locale)}
                     </span>
                     <p className="text-[11px] text-[#94A3B8]">
@@ -306,7 +306,7 @@ export function CatalogoModular({
                     className="inline-flex items-center gap-2 rounded-full bg-[#F59E0B] px-4 py-2 text-xs font-extrabold text-[#0A1628] shadow-lg shadow-[#F59E0B]/25 transition-all duration-300 ease-out hover:bg-[#D97706]"
                   >
                     <span>{dict.viewDetails}</span>
-                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    <ArrowUpRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -423,7 +423,7 @@ export function CatalogoModular({
             <span className="font-bold text-[#0F172A]">{filteredAssets.length}</span>{' '}
             {dict.filterBar.activeFiltersCount}
             {checkInFilter && checkOutFilter ? (
-              <span className="ml-2 rounded-full bg-[#10B981]/15 px-2.5 py-0.5 font-bold text-[#10B981]">
+              <span className="ms-2 rounded-full bg-[#10B981]/15 px-2.5 py-0.5 font-bold text-[#10B981]">
                 {checkInFilter} → {checkOutFilter}
               </span>
             ) : null}
@@ -585,7 +585,7 @@ export function CatalogoModular({
                     <span className="text-2xl font-extrabold text-[#0F172A]">
                       {formatCentsToEUR(asset.priceCents, locale)}
                     </span>
-                    <span className="ml-1 text-xs font-semibold text-[#475569]">
+                    <span className="ms-1 text-xs font-semibold text-[#475569]">
                       {formatBillingUnitLabel(asset.billingUnit, locale)}
                     </span>
                   </div>
@@ -595,7 +595,7 @@ export function CatalogoModular({
                     className="inline-flex items-center gap-1.5 rounded-xl bg-[#F59E0B] px-4 py-2.5 text-xs font-extrabold text-[#0A1628] shadow-md shadow-[#F59E0B]/20 transition-all duration-300 ease-out hover:bg-[#D97706]"
                   >
                     <span>{dict.viewDetails}</span>
-                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    <ArrowUpRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden="true" />
                   </Link>
                 </div>
               </article>

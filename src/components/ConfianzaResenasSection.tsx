@@ -103,7 +103,7 @@ export function ConfianzaResenasSection({ dict }: ConfianzaResenasSectionProps) 
               <Star className="h-4 w-4 fill-[#F59E0B]" aria-hidden="true" />
               <Star className="h-4 w-4 fill-[#F59E0B]" aria-hidden="true" />
               <Star className="h-4 w-4 fill-[#F59E0B]" aria-hidden="true" />
-              <span className="numeric-tabular ml-1.5 text-[#F8FAFC]">4.97 ★</span>
+              <span className="numeric-tabular ms-1.5 text-[#F8FAFC]">4.97 ★</span>
             </div>
           </div>
 

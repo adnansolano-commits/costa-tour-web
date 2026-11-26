@@ -22,6 +22,7 @@
 
 - **Titulares y Display (`font-display`):** `Outfit` (pesos 600, 700, 800; tracking ajustado `-0.03em`).
 - **Interfaz, cuerpo y precios (`font-sans`):** `Inter` (pesos 400, 500, 600).
+- **Tipografía Árabe Secundaria (`--font-cairo`):** `Cairo` (o `IBM Plex Sans Arabic`) vía `next/font/google` (pesos 400, 600, 700, 800) integrada en la pila `--font-display` y `--font-sans` para garantizar legibilidad geométrica nativa en `/ar`.
 - **Regla numérica:** Aplicar `tabular-nums` en todos los precios, fechas, contadores de pasajeros y desgloses de fianza para evitar saltos visuales.
 - **Escala responsive:**
   - `H1 Hero`: `clamp(2.5rem, 5vw, 4.5rem)` | line-height `1.05`
@@ -41,3 +42,10 @@
 - Menú superior compacto con _drawer_ lateral limpio en móvil.
 - Botón flotante persistente de **WhatsApp** en esquina inferior derecha (sin tapar botones de reserva).
 - En páginas de detalle de vehículo, vivienda o barco: barra inferior fija (_sticky bottom bar_) con precio por día/hora y botón directo **Reservar**.
+
+## 6. Reglas de Diseño Espejo RTL (Árabe `/ar`)
+
+- **Dirección de lectura dinámica:** Configurar `lang={locale}` y `dir={locale === 'ar' ? 'rtl' : 'ltr'}` en la raíz del documento.
+- **Propiedades Lógicas CSS / Tailwind:** Prohibido usar clases físicas laterales (`ml-`, `mr-`, `pl-`, `pr-`, `left-`, `right-`, `text-left`, `text-right`, `border-l`, `border-r`). Utilizar exclusivamente propiedades lógicas (`ms-`, `me-`, `ps-`, `pe-`, `start-`, `end-`, `text-start`, `text-end`, `border-s`, `border-e`).
+- **Inversión de Iconografía Direccional:** Invertir horizontalmente (`rtl:-scale-x-100`) todos los iconos de dirección y avance (`ArrowLeft`, `ArrowUpRight`, `ChevronLeft`, `ChevronRight`) cuando `dir="rtl"`.
+- **Invariantes Numéricos LTR:** Mantener `dir="ltr"` explícito en teléfonos E.164 (`+34627710875`) y coordenadas GPS para evitar alteración del signo `+`.

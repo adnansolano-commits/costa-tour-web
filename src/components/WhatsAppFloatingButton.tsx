@@ -28,7 +28,7 @@ export function WhatsAppFloatingButton({
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
-    <div className="fixed bottom-24 right-5 z-40 sm:right-6 lg:bottom-6">
+    <div className="fixed bottom-24 end-5 z-40 sm:end-6 lg:bottom-6">
       <a
         href={whatsappUrl}
         target="_blank"

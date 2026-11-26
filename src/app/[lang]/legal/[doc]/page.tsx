@@ -390,7 +390,7 @@ export default async function LegalDocumentPage({
           href={`/${locale}`}
           className="inline-flex items-center gap-2 rounded-full border border-[#0F172A]/10 bg-white px-4 py-2 text-xs font-bold text-[#0F172A] shadow-sm transition-colors hover:bg-[#0A1628] hover:text-white"
         >
-          <ArrowLeft className="h-4 w-4 text-[#F59E0B]" aria-hidden="true" />
+          <ArrowLeft className="h-4 w-4 text-[#F59E0B] rtl:-scale-x-100" aria-hidden="true" />
           <span>{dict.detail.backToCatalog}</span>
         </Link>
 

@@ -199,7 +199,7 @@ export function AssetDetailBookingClient({
             href={`/${locale}#catalogo`}
             className="inline-flex items-center gap-2 rounded-full border border-[#0F172A]/10 bg-white px-4 py-2 text-xs font-bold text-[#0F172A] shadow-sm transition-colors hover:border-[#0A1628] hover:bg-[#0A1628] hover:text-white"
           >
-            <ArrowLeft className="h-4 w-4 text-[#F59E0B]" aria-hidden="true" />
+            <ArrowLeft className="h-4 w-4 text-[#F59E0B] rtl:-scale-x-100" aria-hidden="true" />
             <span>{detailDict.backToCatalog}</span>
           </Link>
 
@@ -250,7 +250,7 @@ export function AssetDetailBookingClient({
             <button
               type="button"
               onClick={() => setIsLightboxOpen(true)}
-              className="glass-mediterranean absolute right-4 bottom-4 inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-bold text-[#F8FAFC] shadow-xl transition-transform duration-300 hover:scale-105"
+              className="glass-mediterranean absolute end-4 bottom-4 inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-bold text-[#F8FAFC] shadow-xl transition-transform duration-300 hover:scale-105"
             >
               <Expand className="h-4 w-4 text-[#F59E0B]" aria-hidden="true" />
               <span>{detailDict.expandGallery}</span>
@@ -522,7 +522,7 @@ export function AssetDetailBookingClient({
                         </div>
                       </div>
 
-                      <div className="numeric-tabular shrink-0 text-right">
+                      <div className="numeric-tabular shrink-0 text-end">
                         <span className="text-sm font-extrabold text-[#0F172A]">
                           +{formatCentsToEUR(extra.priceCents, locale)}
                         </span>
@@ -550,7 +550,7 @@ export function AssetDetailBookingClient({
                   <span className="text-3xl font-extrabold text-[#F59E0B]">
                     {formatCentsToEUR(asset.priceCents, locale)}
                   </span>
-                  <span className="ml-1.5 text-sm font-medium text-[#94A3B8]">
+                  <span className="ms-1.5 text-sm font-medium text-[#94A3B8]">
                     {formatBillingUnitLabel(asset.billingUnit, locale)}
                   </span>
                 </div>
@@ -863,7 +863,7 @@ export function AssetDetailBookingClient({
             type="button"
             onClick={() => setIsLightboxOpen(false)}
             aria-label={detailDict.closeGallery}
-            className="absolute top-6 right-6 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#112240] text-[#F8FAFC] hover:border-[#F59E0B] hover:text-[#F59E0B]"
+            className="absolute top-6 end-6 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#112240] text-[#F8FAFC] hover:border-[#F59E0B] hover:text-[#F59E0B]"
           >
             <X className="h-6 w-6" aria-hidden="true" />
           </button>
@@ -876,9 +876,9 @@ export function AssetDetailBookingClient({
               )
             }
             aria-label="Previous image"
-            className="absolute left-4 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#112240]/90 text-[#F8FAFC] hover:border-[#F59E0B] sm:left-8"
+            className="absolute start-4 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#112240]/90 text-[#F8FAFC] hover:border-[#F59E0B] sm:start-8"
           >
-            <ChevronLeft className="h-6 w-6" aria-hidden="true" />
+            <ChevronLeft className="h-6 w-6 rtl:-scale-x-100" aria-hidden="true" />
           </button>
 
           <div className="relative aspect-[16/10] w-full max-w-5xl overflow-hidden rounded-3xl border border-white/15 bg-[#0A1628] shadow-2xl">
@@ -897,9 +897,9 @@ export function AssetDetailBookingClient({
               setActiveGalleryIndex((prev) => (prev + 1) % allImages.length)
             }
             aria-label="Next image"
-            className="absolute right-4 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#112240]/90 text-[#F8FAFC] hover:border-[#F59E0B] sm:right-8"
+            className="absolute end-4 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#112240]/90 text-[#F8FAFC] hover:border-[#F59E0B] sm:end-8"
           >
-            <ChevronRight className="h-6 w-6" aria-hidden="true" />
+            <ChevronRight className="h-6 w-6 rtl:-scale-x-100" aria-hidden="true" />
           </button>
         </div>
       )}

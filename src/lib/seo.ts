@@ -73,6 +73,11 @@ export function buildHreflangAlternates(subPath = ''): {
   return {
     canonicalFor: (locale: SupportedLocale) => `${SITE_BASE_URL}/${locale}${normalizedSubPath}`,
     languages: {
+      es: `${SITE_BASE_URL}/es${normalizedSubPath}`,
+      en: `${SITE_BASE_URL}/en${normalizedSubPath}`,
+      de: `${SITE_BASE_URL}/de${normalizedSubPath}`,
+      fr: `${SITE_BASE_URL}/fr${normalizedSubPath}`,
+      ar: `${SITE_BASE_URL}/ar${normalizedSubPath}`,
       'es-ES': `${SITE_BASE_URL}/es${normalizedSubPath}`,
       'en-GB': `${SITE_BASE_URL}/en${normalizedSubPath}`,
       'de-DE': `${SITE_BASE_URL}/de${normalizedSubPath}`,

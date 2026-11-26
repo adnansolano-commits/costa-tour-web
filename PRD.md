@@ -17,7 +17,7 @@ Verticales de alquiler gestionadas desde una sola plataforma unificada:
 
 - Inicializar proyecto Next.js (App Router) + TypeScript + Tailwind CSS.
 - Verificar conexión con **Google Stitch MCP** y sincronizar los tokens de `DESIGN.md` en la configuración de Tailwind y variables CSS globales (`globals.css`).
-- Configurar arquitectura multi-idioma (`next-intl` o middleware i18n nativo) con rutas localizadas: `/es`, `/en`, `/de`, `/fr` y detección automática por navegador.
+- Configurar arquitectura multi-idioma (`next-intl` o middleware i18n nativo) con rutas localizadas: `/es`, `/en`, `/de`, `/fr`, `/ar` (con soporte completo RTL Right-to-Left y diccionario `src/messages/ar.json`) y detección automática por navegador.
 - Crear estructura de datos tipados (`src/types/catalog.ts`) y catálogo mock realista (`src/data/mockCatalog.ts`) con precios en céntimos enteros para validar el Frontend antes de conectar la base de datos.
 
 ### FASE 2: Construcción del Frontend, SEO Técnico y RGPD
@@ -26,7 +26,7 @@ Extraer y ensamblar componentes puros de React en este orden:
 
 1. **Navegación Global y Conversión Móvil:**
    - Navbar transparente en la parte superior que pasa a _glassmorphism sticky_ al hacer scroll.
-   - Enlaces a las 3 verticales, selector de idioma (`ES | EN | DE | FR`) y CTA principal.
+   - Enlaces a las 3 verticales, selector de idioma (`ES | EN | DE | FR | AR`) y CTA principal.
    - Menú hamburguesa responsive y botón flotante persistente de WhatsApp.
 2. **Sección Hero Inmersiva + Buscador Unificado:**
    - Contenedor con vídeo HD asíncrono en bucle (con poster optimizado y gradiente oscuro de contraste).
@@ -49,7 +49,7 @@ Extraer y ensamblar componentes puros de React en este orden:
    - Footer denso en señales locales NAP (Nombre comercial, dirección exacta en Fuengirola, teléfono, WhatsApp, horarios, mapa interactivo y enlaces legales: Aviso Legal, Privacidad, Cookies, Condiciones de Alquiler).
 7. **SEO Técnico Global (Obligatorio en todas las rutas):**
    - `generateMetadata` dinámico por idioma y ficha (Title máximo 60 caracteres, Meta Description máximo 155 caracteres).
-   - Etiquetas `canonical`, `alternates.languages` (`hreflang` para ES/EN/DE/FR) y Open Graph completo.
+   - Etiquetas `canonical`, `alternates.languages` (`hreflang` para ES/EN/DE/FR/AR) y Open Graph completo.
    - Datos estructurados **JSON-LD**: `LocalBusiness` en layout raíz, y esquemas específicos (`AutoRental`, `LodgingBusiness`, `Product` + `Offer`) en las páginas de detalle.
    - Generación dinámica de `sitemap.ts` y `robots.ts`.
 

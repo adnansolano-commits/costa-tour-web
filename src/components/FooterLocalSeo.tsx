@@ -58,7 +58,10 @@ export function FooterLocalSeo({
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#0A1628]">
                     <Phone className="h-4 w-4 fill-current" aria-hidden="true" />
                   </span>
-                  <div className="numeric-tabular flex flex-col font-bold tracking-wide text-[#F8FAFC]">
+                  <div
+                    dir="ltr"
+                    className="numeric-tabular flex flex-col text-start font-bold tracking-wide text-[#F8FAFC]"
+                  >
                     <a
                       href={`tel:${COSTA_TOUR_NAP.phoneMobileE164}`}
                       className="transition-colors hover:text-[#F59E0B]"

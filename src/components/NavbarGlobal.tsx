@@ -167,7 +167,7 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
               aria-label={dict.languageSelectorAria}
               className="flex items-center gap-1 rounded-full border border-white/15 bg-[#112240]/80 p-1 text-xs font-semibold"
             >
-              <Globe className="ml-2 mr-1 h-3.5 w-3.5 text-[#0EA5E9]" aria-hidden="true" />
+              <Globe className="ms-2 me-1 h-3.5 w-3.5 text-[#0EA5E9]" aria-hidden="true" />
               {SUPPORTED_LOCALES.map((langCode) => {
                 const isActive = langCode === locale;
                 return (
@@ -225,7 +225,7 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
             className="fixed inset-0 bg-[#0A1628]/80 backdrop-blur-sm transition-opacity"
           />
 
-          <div className="relative z-10 flex h-full w-full max-w-sm flex-col justify-between border-l border-white/15 bg-[#0A1628] p-6 text-[#F8FAFC] shadow-2xl">
+          <div className="relative z-10 flex h-full w-full max-w-sm flex-col justify-between border-s border-white/15 bg-[#0A1628] p-6 text-[#F8FAFC] shadow-2xl">
             <div>
               {/* Cabecera del Drawer con el Logo Oficial */}
               <div className="flex items-center justify-between border-b border-white/10 pb-5">
@@ -256,7 +256,9 @@ export function NavbarGlobal({ locale, dict }: NavbarGlobalProps) {
                         <Icon className="h-5 w-5 text-[#0EA5E9]" aria-hidden="true" />
                         <span>{item.label}</span>
                       </span>
-                      <span className="text-xs font-medium text-[#94A3B8]">→</span>
+                      <span className="inline-block text-xs font-medium text-[#94A3B8] rtl:-scale-x-100">
+                        →
+                      </span>
                     </a>
                   );
                 })}
