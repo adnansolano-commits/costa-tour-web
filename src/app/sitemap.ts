@@ -3,6 +3,8 @@ import { MOCK_CATALOG } from '@/data/mockCatalog';
 import { SUPPORTED_LOCALES } from '@/i18n/config';
 import { buildHreflangAlternates, SITE_BASE_URL } from '@/lib/seo';
 
+export const dynamic = 'force-static';
+
 /**
  * Generador Dinámico de Sitemap XML Internacional — Costa Tour (PRD.md Fase 2.7)
  *
